@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Camino Vivo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="particles-js"></div>
+<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+<header class="hero">
+    <div class="hero-content">
+        <h1>Camino Vivo</h1>
+        <p class="tagline">
+            Un espacio digital para fortalecer tu fe, compartir oración y caminar cada día más cerca de Dios.
+        </p>
+        <button class="hero-btn" onclick="mostrarSeccion('devocional')">
+            Comenzar Devocional
+        </button>
+    </div>
+</header>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"></div>
+        <div class="nav-links">
+            <button onclick="mostrarSeccion('inicio')">Inicio</button>
+            <button onclick="mostrarSeccion('devocional')">Devocional</button>
+            <button onclick="mostrarSeccion('oracion')">Oración</button>
+        </div>
+    </div>
+</nav>
+
+<section id="inicio" class="section active">
+    <div class="card">
+        <h2>Bienvenido</h2>
+        <p>Una app cristiana para compartir fe y esperanza.</p>
+    </div>
+</section>
+
+<section id="devocional" class="section">
+    <div class="card devocional-card">
+    <h2>Devocional del Día</h2>
+    <div class="devocional-box">
+        <p id="devocionalTexto"></p>
+    </div>
+    <button class="primary-btn" onclick="nuevoDevocional()">
+        Inspirarme Otra Vez
+    </button>
+</div>
+</section>
+
+<section id="oracion" class="section">
+    <div class="card">
+        <h2>Pedido de Oración</h2>
+        <textarea id="prayerInput" placeholder="Escribe tu pedido aquí..."></textarea>
+        <button class="primary-btn" onclick="guardarOracion()">Enviar</button>
+        <div id="listaOraciones"></div>
+    </div>
+</section>
+
+<footer>
+    © 2026 Camino Vivo | Wilton Miguel
+</footer>
+<!-- BOTON FLOTANTE -->
+<button class="floating-btn" onclick="toggleFAQ()">💬</button>
+
+<!-- MODAL FAQ -->
+<div id="faqModal" class="faq-modal">
+    <div class="faq-content">
+        <h2>Centro de Ayuda</h2>
+        <p><strong>¿Cómo envío un pedido?</strong><br>Ve a la sección Oración y escribe tu petición.</p>
+        <p><strong>¿Los pedidos son privados?</strong><br>En esta versión se guardan solo en tu navegador.</p>
+        <p><strong>¿Cómo cambio el devocional?</strong><br>Presiona el botón "Nuevo Devocional".</p>
+        <button class="primary-btn" onclick="toggleFAQ()">Cerrar</button>
+    </div>
+</div>
+<section id="chat" class="section">
+    <div class="card">
+        <h2>Chat Comunidad</h2>
+        <div id="chatBox" class="chat-box"></div>
+        <input type="text" id="chatInput" placeholder="Escribe un mensaje...">
+        <button class="primary-btn" onclick="enviarMensaje()">Enviar</button>
+    </div>
+</section>
+<section id="perfil" class="section">
+    <div class="card">
+        <h2>Mi Perfil</h2>
+        <input type="text" id="nombrePerfil" placeholder="Tu nombre">
+        <button class="primary-btn" onclick="guardarPerfil()">Guardar</button>
+        <p id="mostrarPerfil"></p>
+    </div>
+</section>
+<script src="script.js"></script>
+</body>
+</html>
